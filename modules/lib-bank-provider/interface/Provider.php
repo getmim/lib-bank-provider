@@ -12,10 +12,11 @@ interface Provider
 {
     /**
      * Get all bank proivders, optionally filter by bank name.
+     * @param array $ids List of bank ids.
      * @param string $name Bank name filter.
      * @return array Bank list.
      */
-    static function getAll(string $nama=null): array;
+    static function getAll(array $ids=null, string $nama=null): array;
 
     /** 
      * Get one bank provider by id.

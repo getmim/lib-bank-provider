@@ -29,9 +29,9 @@ Buatkan sebuah library yang mengimplementasikan interface `\LibBankProvider\Ifac
 untuk digunakan sebagai penyedia bank provider. Library tersebut harus
 memiliki method sebagai berikut:
 
-### getAll(string $nama=null): array
+### getAll(array $ids=null, string $nama=null): array
 
-Mengambil semua bank provider, optionally filter berdasarkan nama bank.
+Mengambil semua bank provider, optionally filter berdasarkan id atau nama bank.
 
 ### getById(int $id): ?object
 
@@ -60,5 +60,6 @@ use LibBankProvider\Library\Provider;
 
 $banks = Provider::get();
 $banks = Provider::get(['name'=>'bc']);
+$banks = Provider::get(['id'=>[1,2,3]]);
 $bank  = Provider::getOne(['id'=>1]);
 ```

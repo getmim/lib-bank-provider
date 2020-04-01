@@ -22,9 +22,15 @@ class Provider
         if(!$provider)
             return [];
 
+        $ids = null;
+        $name= null;
+
         if(isset($cond['name']))
-            return $provider::getAll($cond['name']);
-        return $provider::getAll();
+            $name = $cond['name'];
+        if(isset($cond['id']))
+            $ids  = (array)$cond['id'];
+        
+        return $provider::getAll($ids, $name);
     }
 
     static function getOne(array $cond): ?object{
